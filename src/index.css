@@ -2,76 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Vitalsense Health Companion Design System - Medical & Wellness Focused */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
   :root {
-    /* Core Brand Colors - Health & Medical Theme */
-    --background: 210 40% 98%;
-    --foreground: 215 25% 27%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Primary - Medical Blue */
-    --primary: 200 95% 45%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 200 95% 65%;
-    --primary-dark: 200 95% 35%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Secondary - Wellness Green */
-    --secondary: 145 63% 42%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-light: 145 63% 62%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    /* Health Status Colors */
-    --success: 145 63% 42%;
-    --success-foreground: 0 0% 100%;
-    --warning: 45 93% 47%;
-    --warning-foreground: 0 0% 100%;
-    --danger: 0 84% 60%;
-    --danger-foreground: 0 0% 100%;
-    --info: 200 95% 45%;
-    --info-foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* Muted Tones */
-    --muted: 210 40% 95%;
-    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    /* Accent - Vitality Purple */
-    --accent: 270 91% 65%;
-    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* System Colors */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-    --border: 220 14% 91%;
-    --input: 220 14% 93%;
-    --ring: 200 95% 45%;
-
-    --radius: 0.75rem;
-
-    /* Health Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(270 91% 75%));
-    --gradient-health: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-vitals: linear-gradient(45deg, hsl(var(--info)), hsl(var(--accent)));
-
-    /* Health Shadows */
-    --shadow-health: 0 10px 30px -5px hsl(var(--primary) / 0.2);
-    --shadow-vitals: 0 8px 25px -8px hsl(var(--accent) / 0.3);
-    --shadow-card: 0 4px 20px -4px hsl(220 14% 91% / 0.5);
-
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
