@@ -6,26 +6,18 @@ import VitalsDashboard from "@/components/Dashboard/VitalsDashboard";
 import AIChat from "@/components/Chat/AIChat";
 import HealthInsights from "@/components/Insights/HealthInsights";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Index = () => {
   const [hasStarted, setHasStarted] = useState(false);
+  const { user, isDemo } = useAuth();
 
-  if (!hasStarted) {
+  // Show hero section if not authenticated and not in demo mode
+  if (!user && !isDemo) {
     return (
       <div className="min-h-screen bg-background">
         <Header />
         <HeroSection />
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center">
-            <Button 
-              onClick={() => setHasStarted(true)}
-              size="lg"
-              className="bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary text-white px-8 py-4 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Enter Vitalsense Dashboard
-            </Button>
-          </div>
-        </div>
       </div>
     );
   }

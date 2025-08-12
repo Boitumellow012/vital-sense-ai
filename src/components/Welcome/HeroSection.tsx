@@ -1,8 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Zap, Shield, Brain } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const { enterDemoMode } = useAuth();
+  const navigate = useNavigate();
+
+  const handleStartJourney = () => {
+    navigate('/auth');
+  };
+
+  const handleViewDemo = () => {
+    enterDemoMode();
+  };
+
   return (
     <div className="relative overflow-hidden">
       {/* Background gradient */}
@@ -49,6 +62,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
+              onClick={handleStartJourney}
               className="bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary text-white px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Start Health Journey
@@ -56,6 +70,7 @@ const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg"
+              onClick={handleViewDemo}
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-medium transition-all duration-300"
             >
               View Demo
